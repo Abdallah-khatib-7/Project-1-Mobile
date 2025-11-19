@@ -18,7 +18,7 @@ class ResultDisplay extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.all(16), // Reduced padding
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topLeft,
@@ -38,25 +38,25 @@ class ResultDisplay extends StatelessWidget {
         children: [
           const Text(
             'Conversion Result',
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.blue), // Smaller font
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.blue),
           ),
-          const SizedBox(height: 12), // Reduced spacing
+          const SizedBox(height: 12),
 
-          // Input value
+
           Text(
             '$inputValue $fromUnit',
-            style: TextStyle(fontSize: 14, color: Colors.grey[700]), // Smaller font
+            style: TextStyle(fontSize: 14, color: Colors.grey[700]),
           ),
 
-          // Arrow
-          const SizedBox(height: 6), // Reduced spacing
-          const Icon(Icons.arrow_downward, color: Colors.blue, size: 20), // Smaller icon
-          const SizedBox(height: 6), // Reduced spacing
 
-          // Result value
+          const SizedBox(height: 6),
+          const Icon(Icons.arrow_downward, color: Colors.blue, size: 20),
+          const SizedBox(height: 6),
+
+
           Text(
             '${result.toStringAsFixed(6)} $toUnit',
-            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue), // Smaller font
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue),
             textAlign: TextAlign.center,
           ),
         ],

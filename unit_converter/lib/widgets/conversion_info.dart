@@ -19,7 +19,7 @@ class ConversionInfo extends StatelessWidget {
     };
 
     return Container(
-      padding: const EdgeInsets.all(12), // Reduced padding
+      padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: Colors.grey[50],
         borderRadius: BorderRadius.circular(10),
@@ -30,12 +30,12 @@ class ConversionInfo extends StatelessWidget {
         children: [
           Text(
             'About $currentCategory',
-            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold), // Smaller font
+            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 6), // Reduced spacing
           Text(
             categoryDescriptions[currentCategory] ?? 'Unit conversion',
-            style: TextStyle(fontSize: 12, color: Colors.grey[700]), // Smaller font
+            style: TextStyle(fontSize: 12, color: Colors.grey[700]),
           ),
         ],
       ),
