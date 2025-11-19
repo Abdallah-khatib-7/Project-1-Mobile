@@ -3,6 +3,7 @@ import '../widgets/category_selector.dart';
 import '../widgets/unit_dropdown.dart';
 import '../widgets/result_display.dart';
 import '../widgets/conversion_info.dart';
+import '../widgets/conversion_explanation.dart';
 import '../utils/conversion_logic.dart';
 
 class UnitConverterPage extends StatefulWidget {
@@ -49,7 +50,7 @@ class _UnitConverterPageState extends State<UnitConverterPage> {
         foregroundColor: Colors.white,
         elevation: 0,
       ),
-      body: SingleChildScrollView( /
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
@@ -120,7 +121,7 @@ class _UnitConverterPageState extends State<UnitConverterPage> {
 
             const SizedBox(height: 30),
 
-
+            // Result Display
             ResultDisplay(
               inputValue: inputValue,
               fromUnit: fromUnit,
@@ -131,6 +132,17 @@ class _UnitConverterPageState extends State<UnitConverterPage> {
             const SizedBox(height: 20),
 
 
+            ConversionExplanation(
+              fromUnit: fromUnit,
+              toUnit: toUnit,
+              category: selectedCategory,
+              inputValue: inputValue,
+              result: result,
+            ),
+
+            const SizedBox(height: 20),
+
+            // Conversion Info
             ConversionInfo(currentCategory: selectedCategory),
 
             const SizedBox(height: 20),
