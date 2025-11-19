@@ -33,7 +33,7 @@ class UnitDropdown extends StatelessWidget {
             child: DropdownButton<String>(
               value: value,
               isExpanded: true,
-              underline: const SizedBox(),
+              underline: const SizedBox(), // Remove default underline
               items: units.map((String unit) {
                 return DropdownMenuItem<String>(
                   value: unit,

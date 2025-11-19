@@ -49,11 +49,11 @@ class _UnitConverterPageState extends State<UnitConverterPage> {
         foregroundColor: Colors.white,
         elevation: 0,
       ),
-      body: Padding(
+      body: SingleChildScrollView( // ← ADD THIS for scrolling
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-
+            // Category Selector
             CategorySelector(
               selectedCategory: selectedCategory,
               onChanged: (String? newCategory) {
@@ -66,7 +66,7 @@ class _UnitConverterPageState extends State<UnitConverterPage> {
 
             const SizedBox(height: 20),
 
-
+            // Input Field
             TextField(
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
@@ -91,7 +91,7 @@ class _UnitConverterPageState extends State<UnitConverterPage> {
 
             const SizedBox(height: 20),
 
-
+            // Unit Selectors
             UnitDropdown(
               value: fromUnit,
               label: 'From',
@@ -132,6 +132,8 @@ class _UnitConverterPageState extends State<UnitConverterPage> {
 
             // Conversion Info
             ConversionInfo(currentCategory: selectedCategory),
+
+            const SizedBox(height: 20), // Extra space at bottom for scrolling
           ],
         ),
       ),

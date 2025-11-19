@@ -21,24 +21,16 @@ class CategorySelector extends StatelessWidget {
       child: DropdownButton<String>(
         value: selectedCategory,
         isExpanded: true,
-        items: [
-          'Length',
-          'Weight',
-          'Temperature',
-          'Digital Storage',
-          'Frequency',
-          'Area',
-          'Volume',
-          'Time'
-        ].map((String category) {
-          return DropdownMenuItem<String>(
-            value: category,
-            child: Text(
-              category,
-              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-            ),
-          );
-        }).toList(),
+        items: const [
+          DropdownMenuItem(value: 'Length', child: Text('Length')),
+          DropdownMenuItem(value: 'Weight', child: Text('Weight')),
+          DropdownMenuItem(value: 'Temperature', child: Text('Temperature')),
+          DropdownMenuItem(value: 'Digital Storage', child: Text('Digital Storage')),
+          DropdownMenuItem(value: 'Frequency', child: Text('Frequency')),
+          DropdownMenuItem(value: 'Area', child: Text('Area')),
+          DropdownMenuItem(value: 'Volume', child: Text('Volume')),
+          DropdownMenuItem(value: 'Time', child: Text('Time')),
+        ],
         onChanged: onChanged,
       ),
     );

@@ -18,7 +18,7 @@ class ResultDisplay extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(16), // Reduced padding
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topLeft,
@@ -26,7 +26,7 @@ class ResultDisplay extends StatelessWidget {
           colors: [Colors.blue[100]!, Colors.purple[100]!],
         ),
         borderRadius: BorderRadius.circular(15),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: Colors.black12,
             blurRadius: 10,
@@ -38,17 +38,25 @@ class ResultDisplay extends StatelessWidget {
         children: [
           const Text(
             'Conversion Result',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue),
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.blue), // Smaller font
           ),
-          const SizedBox(height: 15),
+          const SizedBox(height: 12), // Reduced spacing
+
+          // Input value
           Text(
             '$inputValue $fromUnit',
-            style: const TextStyle(fontSize: 16, color: Colors.grey[700]),
+            style: TextStyle(fontSize: 14, color: Colors.grey[700]), // Smaller font
           ),
-          const Icon(Icons.arrow_downward, color: Colors.blue, size: 24),
+
+          // Arrow
+          const SizedBox(height: 6), // Reduced spacing
+          const Icon(Icons.arrow_downward, color: Colors.blue, size: 20), // Smaller icon
+          const SizedBox(height: 6), // Reduced spacing
+
+          // Result value
           Text(
             '${result.toStringAsFixed(6)} $toUnit',
-            style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.blue),
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue), // Smaller font
             textAlign: TextAlign.center,
           ),
         ],
